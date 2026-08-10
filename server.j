@@ -20,16 +20,33 @@ app.use((req, res, next) => {
 
 // Proxy - Criar PIX
 app.post('/api/pix', async (req, res) => {
+    console.log('📥 Recebendo requisição PIX...');
+    console.log('Body:', JSON.stringify(req.body));
+    
     try {
         const response = await axios.post('https://api.mercadopago.com/v1/payments', req.body, {
             headers: {
                 'Authorization': `Bearer ${MP_ACCESS_TOKEN}`,
-                'Content-Type': 'application/json'
-            }
+                'Content-Type': 'application/json',
+                'X-Idempotency-Key': `pix_${Date.now()}`
+            },
+            timeout: 15000
         });
+        
+        console.log('✅ PIX criado:', response.data.id);
         res.json(response.data);
+        
     } catch (error) {
-        res.status(500).json({ error: error.message });
+        console.error('❌ Erro:', error.response?.data || error.message);
+        
+        if (error.response) {
+            return res.status(error.response.status).json(error.response.data);
+        }
+        
+        res.status(500).json({ 
+            message: error.message,
+            error: true 
+        });
     }
 });
 
@@ -37,11 +54,15 @@ app.post('/api/pix', async (req, res) => {
 app.get('/api/pix/:id', async (req, res) => {
     try {
         const response = await axios.get(`https://api.mercadopago.com/v1/payments/${req.params.id}`, {
-            headers: { 'Authorization': `Bearer ${MP_ACCESS_TOKEN}` }
+            headers: { 'Authorization': `Bearer ${MP_ACCESS_TOKEN}` },
+            timeout: 10000
         });
+        
         res.json(response.data);
+        
     } catch (error) {
-        res.status(500).json({ error: error.message });
+        console.error('❌ Erro verificação:', error.response?.data || error.message);
+        res.status(error.response?.status || 500).json(error.response?.data || { error: error.message });
     }
 });
 
@@ -51,5 +72,6 @@ app.get('*', (req, res) => {
 });
 
 app.listen(PORT, () => {
-    console.log(`Servidor rodando na porta ${PORT}`);
+    console.log(`🚀 Servidor rodando na porta ${PORT}`);
+    console.log(`💳 Mercado Pago Proxy ativo`);
 });
