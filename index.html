@@ -3,8 +3,6 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.5, user-scalable=yes">
-
-    <!-- ========== HEADER DE SEGURANÇA MÁXIMA ========== -->
     <meta http-equiv="X-Content-Type-Options" content="nosniff">
     <meta http-equiv="X-Frame-Options" content="DENY">
     <meta http-equiv="X-XSS-Protection" content="1; mode=block">
@@ -12,22 +10,7 @@
     <meta http-equiv="Permissions-Policy" content="camera=(), microphone=(), geolocation=(), interest-cohort=()">
     <meta name="theme-color" content="#0f0f1a">
     <meta name="color-scheme" content="dark">
-    <meta http-equiv="Content-Security-Policy" content="
-        default-src 'none';
-        script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.googletagmanager.com https://connect.facebook.net https://*.googleapis.com https://cdnjs.cloudflare.com https://a.nel.cloudflare.com https://api.qrserver.com https://api.mercadopago.com;
-        style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdnjs.cloudflare.com;
-        font-src 'self' https://fonts.gstatic.com https://cdnjs.cloudflare.com data:;
-        img-src 'self' data: https://www.facebook.com https://*.fbcdn.net https://a.nel.cloudflare.com https://api.qrserver.com;
-        connect-src 'self' https://a.nel.cloudflare.com https://api.mercadopago.com https://api.qrserver.com https://www.googletagmanager.com https://connect.facebook.net;
-        frame-src 'self' https://www.youtube.com https://www.mercadopago.com;
-        media-src 'self' data:;
-        object-src 'none';
-        base-uri 'self';
-        form-action 'self';
-        manifest-src 'self';
-        worker-src 'self';
-    ">
-
+    <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.googletagmanager.com https://connect.facebook.net https://*.googleapis.com https://cdnjs.cloudflare.com https://a.nel.cloudflare.com https://api.qrserver.com https://api.mercadopago.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdnjs.cloudflare.com; font-src 'self' https://fonts.gstatic.com https://cdnjs.cloudflare.com data:; img-src 'self' data: https://www.facebook.com https://*.fbcdn.net https://a.nel.cloudflare.com https://api.qrserver.com; connect-src 'self' https://a.nel.cloudflare.com https://api.mercadopago.com https://api.qrserver.com https://www.googletagmanager.com https://connect.facebook.net; frame-src 'self' https://www.youtube.com; media-src 'self' data:; object-src 'none'; base-uri 'self'; form-action 'self'; manifest-src 'self'; worker-src 'self';">
     <meta http-equiv="Clear-Site-Data" content="cache">
     
     <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17691475001"></script>
@@ -961,8 +944,8 @@
         }
 
         .gateway-notice {
-            background-color: rgba(46, 204, 113, 0.08);
-            border: 1px solid rgba(46, 204, 113, 0.2);
+            background-color: rgba(52, 152, 219, 0.08);
+            border: 1px solid rgba(52, 152, 219, 0.2);
             border-radius: 8px;
             padding: 12px 15px;
             margin: 15px 0 20px;
@@ -976,7 +959,7 @@
         }
 
         .gateway-notice i {
-            color: var(--green);
+            color: #3498db;
             font-size: 0.9rem;
             flex-shrink: 0;
             margin-top: 1px;
@@ -1221,42 +1204,6 @@
             .music-player { bottom: 30px; right: 15px; }
         }
     </style>
-
-    <script>
-    (function() {
-        'use strict';
-        const devtools = { isOpen: false, orientation: undefined };
-        const threshold = 160;
-        const detectDevTools = () => {
-            const widthThreshold = window.outerWidth - window.innerWidth > threshold;
-            const heightThreshold = window.outerHeight - window.innerHeight > threshold;
-            const orientation = widthThreshold ? 'vertical' : 'horizontal';
-            if (!(heightThreshold && widthThreshold) && ((window.Firebug && window.Firebug.chrome && window.Firebug.chrome.isInitialized) || widthThreshold || heightThreshold)) {
-                if (!devtools.isOpen || devtools.orientation !== orientation) {
-                    devtools.isOpen = true;
-                    devtools.orientation = orientation;
-                    window.location.reload();
-                }
-            } else { devtools.isOpen = false; devtools.orientation = undefined; }
-        };
-        setInterval(detectDevTools, 500);
-        const noop = function() {};
-        const methods = ['log','debug','warn','info','error','exception','table','trace','dir','dirxml','group','groupCollapsed','groupEnd','clear','count','countReset','assert','profile','profileEnd','time','timeEnd','timeLog','timeStamp','context','memory'];
-        methods.forEach(method => {
-            if (typeof console !== 'undefined') {
-                try { Object.defineProperty(console, method, { get: function() { return noop; }, set: function() {} }); } catch(e) {}
-            }
-        });
-        Object.defineProperty(window, 'console', { get: function() { const c = {}; methods.forEach(m => c[m] = noop); return c; }, set: function() {} });
-        const check = function() {
-            if (window.outerWidth - window.innerWidth > 200 || window.outerHeight - window.innerHeight > 200 || navigator.webdriver || window.callPhantom || window._phantom || window.__nightmare || window.domAutomation || window.domAutomationController || document.__selenium_unwrapped || document.__webdriver_evaluate || document.__driver_evaluate || document.__webdriver_script_function || document.__webdriver_script_func || document.__webdriver_script_fn || document.__fxdriver_evaluate || document.__driver_unwrapped || document.__webdriver_unwrapped || document.__selenium_evaluate || document.__fxdriver_unwrapped) {
-                document.body.innerHTML = '';
-                document.write('Acesso não autorizado detectado.');
-            }
-        };
-        setInterval(check, 1000);
-    })();
-    </script>
 </head>
 <body>
 
@@ -1306,7 +1253,6 @@
                 <h2>NOSSAS FERRAMENTAS</h2>
                 <p>Escolha a solução perfeita para o seu negócio no Telegram</p>
             </div>
-
             <div class="products-grid">
                 <div class="product-card">
                     <div class="product-badge badge-promo">Promoção</div>
@@ -1513,12 +1459,10 @@
             <div class="warning-message">
                 ⚠️ SÓ PARA QUEM ENTENDE. CURIOSOS, PASSEM RETO. ⚠️
             </div>
-
             <div class="section-title">
                 <h2>⚡ FERRAMENTAS ESPECIAIS</h2>
                 <p>Produtos de alto valor com retorno garantido.</p>
             </div>
-
             <div class="products-grid">
                 <div class="product-card special-card">
                     <div class="product-badge badge-promo-limitada">🔥 PROMO LIMITADA</div>
@@ -1706,7 +1650,7 @@
             <div class="section-title"><h2>DÚVIDAS FREQUENTES</h2><p>Tire suas dúvidas sobre nossos produtos e serviços</p></div>
             <div class="faq-item active">
                 <div class="faq-question"><span>Como faço para comprar?</span><i class="fas fa-chevron-down"></i></div>
-                <div class="faq-answer"><p>Clique em "Comprar Agora", preencha os dados e pague via PIX do Mercado Pago. Após a confirmação, o suporte via Telegram libera seu acesso.</p></div>
+                <div class="faq-answer"><p>Clique em "Comprar Agora", preencha os dados e pague via PIX. Após a confirmação, o suporte via Telegram libera seu acesso.</p></div>
             </div>
             <div class="faq-item">
                 <div class="faq-question"><span>Como recebo os produtos especiais?</span><i class="fas fa-chevron-down"></i></div>
@@ -1719,12 +1663,11 @@
         </div>
     </section>
 
-    <!-- MODAL DE PAGAMENTO -->
     <div id="paymentModal" class="modal">
         <div class="modal-content">
             <button class="close-modal" id="closeModal" aria-label="Fechar">&times;</button>
             <h3 class="modal-title">FINALIZAR COMPRA</h3>
-            <p class="modal-subtitle">Pagamento seguro via <strong style="color:#00a6ff;">Mercado Pago</strong></p>
+            <p class="modal-subtitle">Preencha seus dados para gerar o PIX</p>
             <div class="modal-product-info">
                 <span class="modal-product-name" id="modalProductName">—</span>
                 <span class="modal-product-price" id="modalProductPrice">R$0,00</span>
@@ -1760,7 +1703,7 @@
                     <span class="form-error">E-mail inválido.</span>
                 </div>
                 <button class="btn-gerar-pix" id="btnGerarPix">
-                    <i class="fas fa-qrcode"></i> Gerar PIX via Mercado Pago
+                    <i class="fas fa-qrcode"></i> Gerar PIX agora
                 </button>
             </div>
 
@@ -1775,8 +1718,8 @@
                 </div>
                 
                 <div class="gateway-notice">
-                    <i class="fas fa-lock"></i>
-                    <span><strong>Mercado Pago:</strong> Pagamento 100% seguro e protegido. Seus dados estão criptografados.</span>
+                    <i class="fas fa-info-circle"></i>
+                    <span><strong>Nota:</strong> Seu banco pode exibir um alerta de segurança ao processar este PIX. Isso é normal e ocorre devido à verificação automática do nosso gateway de pagamento. A transação é 100% segura.</span>
                 </div>
                 
                 <div class="or-divider">ou copie o código abaixo</div>
@@ -1788,8 +1731,11 @@
                 <div class="payment-status pending" id="paymentStatus">
                     <div class="status-icon">⏳</div>
                     <div class="status-text">Aguardando pagamento</div>
-                    <div class="status-sub">Após o pagamento, entre em contato via Telegram</div>
+                    <div class="status-sub">O PIX expira em 30 minutos.</div>
                 </div>
+                <button class="btn-verificar" id="btnVerificar">
+                    <i class="fas fa-sync-alt"></i> Verificar pagamento
+                </button>
                 <p class="expiry-note"><i class="fas fa-clock"></i> PIX válido por 30 minutos</p>
             </div>
 
@@ -1838,18 +1784,10 @@
     <div class="toast" id="toast"></div>
     <audio id="backgroundMusic" loop><source src="music2.mp3" type="audio/mpeg"></audio>
 
-    <!-- ============================================ -->
-    <!-- SCRIPT MERCADO PAGO INTEGRADO -->
-    <!-- ============================================ -->
     <script>
     (() => {
         'use strict';
 
-        // Configuração Mercado Pago
-        const MP_ACCESS_TOKEN = 'APP_USR-8797267091485744-080614-3628865a23abc1d781f9b5ba94633ab4-3361822415';
-        const MP_API_URL = 'https://cors-anywhere.herokuapp.com/https://api.mercadopago.com/v1/payments';
-
-        // Tabela de preços oficiais
         const OFFICIAL_PRICES = Object.freeze({
             'ManyCam + Método de Tela Cheia': 49.90,
             'ManyCam + Método de Tela Cheia (com instalação)': 149.90,
@@ -1875,22 +1813,57 @@
             'HOT MILIONARIO': 493.90
         });
 
+        Object.defineProperty(window, 'OFFICIAL_PRICES', { value: OFFICIAL_PRICES, writable: false, configurable: false });
+
+        function validatePrice(productName, price) {
+            const officialPrice = OFFICIAL_PRICES[productName];
+            if (officialPrice === undefined) return false;
+            if (Math.abs(officialPrice - price) > 0.01) return false;
+            return true;
+        }
+
+        document.addEventListener('contextmenu', e => e.preventDefault());
+        document.addEventListener('keydown', e => {
+            if (e.ctrlKey && ['u','U','s','S','i','I','j','J','c','C','p','P'].includes(e.key)) {
+                e.preventDefault(); e.stopPropagation(); return false;
+            }
+            if (e.key === 'F12' || (e.ctrlKey && e.shiftKey && ['I','J','C'].includes(e.key))) {
+                e.preventDefault(); e.stopPropagation(); return false;
+            }
+        });
+        document.addEventListener('keyup', e => {
+            if (e.key === 'F12' || (e.ctrlKey && e.shiftKey && ['I','J','C'].includes(e.key))) {
+                e.preventDefault(); e.stopPropagation(); return false;
+            }
+        });
+        document.addEventListener('selectstart', e => {
+            if (e.target.tagName !== 'INPUT' && e.target.tagName !== 'TEXTAREA') e.preventDefault();
+        });
+        document.addEventListener('copy', e => {
+            if (e.target.tagName !== 'INPUT' && e.target.tagName !== 'TEXTAREA') { e.preventDefault(); return false; }
+        });
+        document.addEventListener('cut', e => {
+            if (e.target.tagName !== 'INPUT' && e.target.tagName !== 'TEXTAREA') { e.preventDefault(); return false; }
+        });
+
+        const integrityObserver = new MutationObserver((mutations) => {
+            mutations.forEach((mutation) => {
+                if (mutation.type === 'attributes' && mutation.target.hasAttribute && mutation.target.hasAttribute('data-price')) {
+                    const productName = mutation.target.getAttribute('data-product');
+                    const currentPrice = parseFloat(mutation.target.getAttribute('data-price'));
+                    if (productName && OFFICIAL_PRICES[productName] && Math.abs(OFFICIAL_PRICES[productName] - currentPrice) > 0.01) {
+                        mutation.target.setAttribute('data-price', OFFICIAL_PRICES[productName].toString());
+                    }
+                }
+            });
+        });
+        integrityObserver.observe(document.body, { attributes: true, subtree: true, attributeFilter: ['data-price'] });
+
+        const MP_ACCESS_TOKEN = 'APP_USR-8797267091485744-080614-3628865a23abc1d781f9b5ba94633ab4-3361822415';
+        const MP_API_URL = 'https://api.mercadopago.com/v1/payments';
         const COUPON_CODE = 'COLAB5';
         const DISCOUNT = 0.05;
 
-        function validatePrice(productName, price) {
-            return OFFICIAL_PRICES[productName] && Math.abs(OFFICIAL_PRICES[productName] - price) < 0.01;
-        }
-
-        // Proteções
-        document.addEventListener('contextmenu', e => e.preventDefault());
-        document.addEventListener('keydown', e => {
-            if (e.ctrlKey && ['u','s','i','j','c','p'].includes(e.key.toLowerCase()) || e.key === 'F12') {
-                e.preventDefault();
-            }
-        });
-
-        // Timer
         function startPromoTimer(duration = 15 * 60) {
             const timerEl = document.getElementById('promoTimer');
             let time = duration;
@@ -1898,14 +1871,15 @@
                 const mins = Math.floor(time / 60);
                 const secs = time % 60;
                 timerEl.textContent = `${mins.toString().padStart(2,'0')}:${secs.toString().padStart(2,'0')}`;
-                if (time <= 0) { timerEl.textContent = 'EXPIRADO'; return; }
-                time--;
-                setTimeout(updateTimer, 1000);
+                if (time <= 0) { timerEl.textContent = 'EXPIRADO'; }
+                else { time--; setTimeout(updateTimer, 1000); }
             }
             updateTimer();
         }
         startPromoTimer();
 
+        let currentTransactionId = null;
+        let pollingInterval = null;
         let currentProduct = { productName: '', price: 0 };
         let originalPrice = 0;
 
@@ -1917,17 +1891,30 @@
             setTimeout(() => t.classList.remove('show'), 3500);
         }
 
-        // Máscaras
-        document.getElementById('inputCPF')?.addEventListener('input', function() {
+        const cpfInput = document.getElementById('inputCPF');
+        const phoneInput = document.getElementById('inputPhone');
+        if (cpfInput) cpfInput.addEventListener('input', function () {
             this.value = this.value.replace(/\D/g,'').replace(/(\d{3})(\d)/,'$1.$2').replace(/(\d{3})(\d)/,'$1.$2').replace(/(\d{3})(\d{1,2})$/,'$1-$2');
         });
-        document.getElementById('inputPhone')?.addEventListener('input', function() {
+        if (phoneInput) phoneInput.addEventListener('input', function () {
             this.value = this.value.replace(/\D/g,'').replace(/^(\d{2})(\d)/,'($1) $2').replace(/(\d{5})(\d{4})$/,'$1-$2');
         });
 
         function cleanNum(v) { return v.replace(/\D/g,''); }
         function validEmail(e) { return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(e); }
-        
+        function validCPF(cpf) {
+            cpf = cleanNum(cpf);
+            if (cpf.length !== 11 || /^(\d)\1+$/.test(cpf)) return false;
+            let s = 0;
+            for (let i = 0; i < 9; i++) s += +cpf[i] * (10 - i);
+            let r = (s * 10) % 11; if (r >= 10) r = 0;
+            if (r !== +cpf[9]) return false;
+            s = 0;
+            for (let i = 0; i < 10; i++) s += +cpf[i] * (11 - i);
+            r = (s * 10) % 11; if (r >= 10) r = 0;
+            return r === +cpf[10];
+        }
+
         function setErr(id, v) { document.getElementById(id)?.classList.toggle('has-error', v); }
 
         function validateForm() {
@@ -1936,15 +1923,21 @@
             const phone = document.getElementById('inputPhone').value;
             const email = document.getElementById('inputEmail').value.trim();
             let ok = true;
-            setErr('grp-name', name.split(/\s+/).length < 2);
-            setErr('grp-cpf', cleanNum(cpf).length !== 11);
-            setErr('grp-phone', cleanNum(phone).length < 10);
-            setErr('grp-email', !validEmail(email));
-            if (name.split(/\s+/).length < 2 || cleanNum(cpf).length !== 11 || cleanNum(phone).length < 10 || !validEmail(email)) ok = false;
+            const nameOk = name.split(/\s+/).length >= 2;
+            setErr('grp-name', !nameOk); if (!nameOk) ok = false;
+            setErr('grp-cpf', !validCPF(cpf)); if (!validCPF(cpf)) ok = false;
+            setErr('grp-phone', cleanNum(phone).length < 10); if (cleanNum(phone).length < 10) ok = false;
+            setErr('grp-email', !validEmail(email)); if (!validEmail(email)) ok = false;
             return ok;
         }
 
-        // CRIAR PIX VIA MERCADO PAGO
+        function setStatus(type, icon, title, sub) {
+            const el = document.getElementById('paymentStatus');
+            if (!el) return;
+            el.className = 'payment-status ' + type;
+            el.innerHTML = `<div class="status-icon">${icon}</div><div class="status-text">${title}</div><div class="status-sub">${sub}</div>`;
+        }
+
         async function criarPixMP(amount, description, email, name, cpf) {
             const response = await fetch(MP_API_URL, {
                 method: 'POST',
@@ -1974,19 +1967,50 @@
             return await response.json();
         }
 
+        async function verificarPagamentoMP(paymentId) {
+            const response = await fetch(`${MP_API_URL}/${paymentId}`, {
+                headers: { 'Authorization': `Bearer ${MP_ACCESS_TOKEN}` }
+            });
+
+            if (!response.ok) throw new Error('Erro ao verificar');
+            return await response.json();
+        }
+
+        function startPolling(txId) {
+            if (pollingInterval) clearInterval(pollingInterval);
+            pollingInterval = setInterval(async () => {
+                try {
+                    const data = await verificarPagamentoMP(txId);
+                    const status = (data?.status || '').toLowerCase();
+                    if (['approved'].includes(status)) {
+                        clearInterval(pollingInterval);
+                        setStatus('paid','✅','Pagamento confirmado!','Acesso liberado! Entre em contato com @suphotvip no Telegram.');
+                        document.getElementById('btnVerificar').style.display = 'none';
+                        showToast('Pagamento confirmado! ✅','success');
+                        if (typeof fbq === 'function') fbq('track', 'Purchase', { value: currentProduct.price, currency: 'BRL' });
+                    }
+                } catch (_) {}
+            }, 8000);
+        }
+
         function openModal(productName, price) {
             if (!validatePrice(productName, price)) {
-                showToast('⚠️ ERRO: Valor do produto inválido.', 'error');
+                showToast('⚠️ ERRO DE SEGURANÇA: Valor do produto inválido.', 'error');
                 return;
             }
             originalPrice = price;
             currentProduct = { productName, price };
+            currentTransactionId = null;
+            if (pollingInterval) clearInterval(pollingInterval);
 
             document.getElementById('formSection').style.display = 'block';
             document.getElementById('pixArea').style.display = 'none';
-            document.getElementById('btnGerarPix').disabled = false;
-            document.getElementById('btnGerarPix').innerHTML = '<i class="fas fa-qrcode"></i> Gerar PIX via Mercado Pago';
+            document.getElementById('btnVerificar').style.display = 'block';
+            const btnGerar = document.getElementById('btnGerarPix');
+            btnGerar.disabled = false;
+            btnGerar.innerHTML = '<i class="fas fa-qrcode"></i> Gerar PIX agora';
             ['grp-name','grp-cpf','grp-phone','grp-email'].forEach(id => setErr(id, false));
+            setStatus('pending','⏳','Aguardando pagamento','O PIX expira em 30 minutos.');
             document.getElementById('modalProductName').textContent = productName;
             document.getElementById('modalProductPrice').textContent = 'R$' + price.toFixed(2).replace('.',',');
             document.getElementById('paymentModal').classList.add('active');
@@ -1996,14 +2020,29 @@
         function closeModal() {
             document.getElementById('paymentModal').classList.remove('active');
             document.body.style.overflow = '';
+            if (pollingInterval) clearInterval(pollingInterval);
         }
 
-        // Cupom
+        const klSelect = document.getElementById('kl-special-select');
+        const klBuyBtn = document.getElementById('kl-special-buy');
+        if (klSelect && klBuyBtn) {
+            klSelect.addEventListener('change', function() {
+                const opt = this.options[this.selectedIndex];
+                const productName = opt.dataset.product;
+                const price = parseFloat(opt.value);
+                if (validatePrice(productName, price)) {
+                    klBuyBtn.dataset.price = opt.value;
+                    klBuyBtn.dataset.product = productName;
+                }
+            });
+        }
+
         document.getElementById('applyCoupon').addEventListener('click', () => {
             const coupon = document.getElementById('couponInput').value.trim().toUpperCase();
             if (coupon === COUPON_CODE) {
-                currentProduct.price = originalPrice * (1 - DISCOUNT);
-                document.getElementById('modalProductPrice').textContent = 'R$' + currentProduct.price.toFixed(2).replace('.',',');
+                const newPrice = originalPrice * (1 - DISCOUNT);
+                document.getElementById('modalProductPrice').textContent = 'R$' + newPrice.toFixed(2).replace('.',',');
+                currentProduct.price = newPrice;
                 showToast('Cupom aplicado! 5% de desconto.', 'success');
             } else {
                 currentProduct.price = originalPrice;
@@ -2012,46 +2051,77 @@
             }
         });
 
-        // Gerar PIX
         document.getElementById('btnGerarPix').addEventListener('click', async () => {
             if (!validateForm()) { showToast('Preencha todos os campos corretamente.','error'); return; }
-
+            if (!validatePrice(currentProduct.productName, currentProduct.price)) {
+                showToast('⚠️ ERRO CRÍTICO: Preço manipulado detectado.', 'error');
+                closeModal();
+                return;
+            }
             const btn = document.getElementById('btnGerarPix');
             btn.disabled = true;
             btn.innerHTML = '<span class="spinner"></span> Gerando PIX...';
-
             const name = document.getElementById('inputName').value.trim();
             const cpf = cleanNum(document.getElementById('inputCPF').value);
             const email = document.getElementById('inputEmail').value.trim();
-
+            const securePrice = OFFICIAL_PRICES[currentProduct.productName] || currentProduct.price;
+            
             try {
-                const data = await criarPixMP(currentProduct.price, currentProduct.productName, email, name, cpf);
-
+                const data = await criarPixMP(securePrice, currentProduct.productName, email, name, cpf);
+                
+                currentTransactionId = data.id;
+                
                 const qrData = data.point_of_interaction?.transaction_data || {};
                 const qrImgEl = document.getElementById('qrCodeImg');
-
+                
                 if (qrData.qr_code_base64) {
                     qrImgEl.src = `data:image/png;base64,${qrData.qr_code_base64}`;
                 } else if (qrData.qr_code) {
                     qrImgEl.src = `https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=${encodeURIComponent(qrData.qr_code)}`;
+                } else {
+                    qrImgEl.src = 'data:image/svg+xml,' + encodeURIComponent('<svg xmlns="http://www.w3.org/2000/svg" width="200" height="200"><rect width="200" height="200" fill="#fff"/><text x="100" y="90" text-anchor="middle" font-size="12" fill="#333">QR Code</text><text x="100" y="110" text-anchor="middle" font-size="10" fill="#666">Use o código</text><text x="100" y="130" text-anchor="middle" font-size="10" fill="#666">abaixo</text></svg>');
                 }
-
-                document.getElementById('pixCopyCode').textContent = qrData.qr_code || 'Código não disponível';
+                qrImgEl.style.display = 'block';
+                
+                document.getElementById('pixCopyCode').textContent = qrData.qr_code || 'Código não disponível - utilize o QR Code acima';
                 document.getElementById('formSection').style.display = 'none';
                 document.getElementById('pixArea').style.display = 'block';
-
-                showToast('PIX gerado! Realize o pagamento 🎉','success');
+                
+                if (currentTransactionId) startPolling(currentTransactionId);
+                showToast('PIX gerado! Realize o pagamento agora 🎉','success');
             } catch (err) {
-                showToast('Erro: ' + err.message, 'error');
+                showToast('Erro ao gerar PIX: ' + err.message, 'error');
                 btn.disabled = false;
-                btn.innerHTML = '<i class="fas fa-qrcode"></i> Gerar PIX via Mercado Pago';
+                btn.innerHTML = '<i class="fas fa-qrcode"></i> Gerar PIX agora';
             }
         });
 
-        // Copiar PIX
+        document.getElementById('btnVerificar').addEventListener('click', async () => {
+            if (!currentTransactionId) return;
+            const btn = document.getElementById('btnVerificar');
+            btn.disabled = true;
+            try {
+                const data = await verificarPagamentoMP(currentTransactionId);
+                const status = (data?.status || '').toLowerCase();
+                if (['approved'].includes(status)) {
+                    clearInterval(pollingInterval);
+                    setStatus('paid','✅','Pagamento confirmado!','Acesso liberado!');
+                    btn.style.display = 'none';
+                    showToast('Pagamento confirmado! ✅','success');
+                } else {
+                    setStatus('pending','⏳','Ainda não identificamos','Tente novamente em instantes.');
+                    showToast('Pagamento ainda não identificado','info');
+                }
+            } catch (e) { showToast('Erro ao verificar: ' + e.message,'error'); }
+            btn.disabled = false;
+        });
+
         document.getElementById('btnCopiarPix').addEventListener('click', async () => {
             const code = document.getElementById('pixCopyCode').textContent.trim();
-            if (!code || code === '—') { showToast('Use o QR Code.', 'info'); return; }
+            if (!code || code === '—' || code.includes('não disponível')) {
+                showToast('Use o QR Code para pagamento.', 'info');
+                return;
+            }
             try {
                 await navigator.clipboard.writeText(code);
                 const btn = document.getElementById('btnCopiarPix');
@@ -2062,87 +2132,95 @@
                     btn.classList.remove('copied');
                     btn.innerHTML = '<i class="fas fa-copy"></i> Copiar código PIX';
                 }, 3000);
-            } catch { showToast('Copie manualmente.','error'); }
+            } catch { showToast('Copie manualmente o código acima.','error'); }
         });
 
-        // Fechar modal
         document.getElementById('closeModal').addEventListener('click', closeModal);
         document.getElementById('paymentModal').addEventListener('click', e => { if (e.target.id === 'paymentModal') closeModal(); });
 
-        // Botões de compra
-        document.querySelectorAll('.btn-buy').forEach(btn => {
+        document.querySelectorAll('.btn-buy').forEach(btn =>
             btn.addEventListener('click', function(e) {
                 e.preventDefault();
-                if (!validatePrice(this.dataset.product, parseFloat(this.dataset.price))) {
-                    showToast('⚠️ ERRO: Preço inválido.', 'error');
+                const productName = this.dataset.product;
+                const price = parseFloat(this.dataset.price);
+                if (!validatePrice(productName, price)) {
+                    showToast('⚠️ ERRO: Preço inválido detectado.', 'error');
                     return;
                 }
-                openModal(this.dataset.product, parseFloat(this.dataset.price));
-            });
-        });
+                openModal(productName, price);
+            })
+        );
 
-        document.querySelectorAll('.footer-buy-link').forEach(link => {
+        document.querySelectorAll('.footer-buy-link').forEach(link =>
             link.addEventListener('click', function(e) {
                 e.preventDefault();
-                openModal(this.dataset.product, parseFloat(this.dataset.price));
+                const productName = this.dataset.product;
+                const price = parseFloat(this.dataset.price);
+                if (!validatePrice(productName, price)) {
+                    showToast('⚠️ ERRO: Preço inválido detectado.', 'error');
+                    return;
+                }
+                openModal(productName, price);
+            })
+        );
+
+        const selMem = document.getElementById('telegram-members-option');
+        const btnMem = document.getElementById('buy-telegram-members');
+        if (selMem && btnMem) {
+            selMem.addEventListener('change', function() {
+                const opt = this.options[this.selectedIndex];
+                const productName = opt.dataset.product;
+                const price = parseFloat(opt.value);
+                if (validatePrice(productName, price)) {
+                    btnMem.dataset.price = opt.value;
+                    btnMem.dataset.product = productName;
+                }
             });
-        });
+        }
 
-        // Selects
-        document.getElementById('kl-special-select')?.addEventListener('change', function() {
-            const opt = this.options[this.selectedIndex];
-            document.getElementById('kl-special-buy').dataset.price = opt.value;
-            document.getElementById('kl-special-buy').dataset.product = opt.dataset.product;
-        });
-
-        document.getElementById('telegram-members-option')?.addEventListener('change', function() {
-            const opt = this.options[this.selectedIndex];
-            document.getElementById('buy-telegram-members').dataset.price = opt.value;
-            document.getElementById('buy-telegram-members').dataset.product = opt.dataset.product;
-        });
-
-        document.getElementById('manycam-select')?.addEventListener('change', function() {
-            const opt = this.options[this.selectedIndex];
-            document.getElementById('manycam-buy').dataset.price = opt.value;
-            document.getElementById('manycam-buy').dataset.product = opt.dataset.product;
-        });
-
-        // Menu mobile
-        document.getElementById('mobileMenuBtn')?.addEventListener('click', () => {
-            const nav = document.getElementById('navLinks');
-            nav.classList.toggle('active');
-            document.getElementById('mobileMenuBtn').innerHTML = nav.classList.contains('active') ? '<i class="fas fa-times"></i>' : '<i class="fas fa-bars"></i>';
-        });
-
-        document.querySelectorAll('.nav-link').forEach(l => l.addEventListener('click', () => {
-            document.getElementById('navLinks').classList.remove('active');
-            document.getElementById('mobileMenuBtn').innerHTML = '<i class="fas fa-bars"></i>';
-        }));
-
-        // Smooth scroll
-        document.querySelectorAll('a[href^="#"]').forEach(a => {
-            a.addEventListener('click', function(e) {
-                if (this.classList.contains('btn-buy') || this.classList.contains('footer-buy-link')) return;
-                e.preventDefault();
-                const t = document.querySelector(this.getAttribute('href'));
-                if (t) window.scrollTo({ top: t.offsetTop - 80, behavior: 'smooth' });
+        const manycamSelect = document.getElementById('manycam-select');
+        const manycamBtn = document.getElementById('manycam-buy');
+        if (manycamSelect && manycamBtn) {
+            manycamSelect.addEventListener('change', function() {
+                const opt = this.options[this.selectedIndex];
+                const productName = opt.dataset.product;
+                const price = parseFloat(opt.value);
+                if (validatePrice(productName, price)) {
+                    manycamBtn.dataset.price = opt.value;
+                    manycamBtn.dataset.product = productName;
+                }
             });
-        });
+        }
 
-        // FAQ
-        document.querySelectorAll('.faq-item').forEach(item => {
-            item.querySelector('.faq-question').addEventListener('click', () => {
-                document.querySelectorAll('.faq-item').forEach(i => i !== item && i.classList.remove('active'));
-                item.classList.toggle('active');
-            });
-        });
-
-        // Scroll header
         window.addEventListener('scroll', () => {
             document.getElementById('mainHeader').style.boxShadow = window.scrollY > 50 ? '0 5px 20px rgba(0,0,0,0.2)' : 'none';
         });
 
-        // Animações
+        const mBtn = document.getElementById('mobileMenuBtn');
+        const nav = document.getElementById('navLinks');
+        mBtn?.addEventListener('click', () => {
+            nav.classList.toggle('active');
+            mBtn.innerHTML = nav.classList.contains('active') ? '<i class="fas fa-times"></i>' : '<i class="fas fa-bars"></i>';
+        });
+        document.querySelectorAll('.nav-link').forEach(l => l.addEventListener('click', () => {
+            nav.classList.remove('active');
+            mBtn.innerHTML = '<i class="fas fa-bars"></i>';
+        }));
+
+        document.querySelectorAll('a[href^="#"]').forEach(a => a.addEventListener('click', function(e) {
+            if (this.classList.contains('btn-buy') || this.classList.contains('footer-buy-link')) return;
+            e.preventDefault();
+            const t = document.querySelector(this.getAttribute('href'));
+            if (t) window.scrollTo({ top: t.offsetTop - 80, behavior: 'smooth' });
+        }));
+
+        document.querySelectorAll('.faq-item').forEach(item =>
+            item.querySelector('.faq-question').addEventListener('click', () => {
+                document.querySelectorAll('.faq-item').forEach(i => i !== item && i.classList.remove('active'));
+                item.classList.toggle('active');
+            })
+        );
+
         const anim = document.querySelectorAll('.product-card,.channel-card,.security-item,.testimonial-card');
         function doAnim() {
             anim.forEach(el => {
@@ -2162,7 +2240,6 @@
         });
         window.addEventListener('scroll', doAnim);
 
-        // Música
         const music = document.getElementById('backgroundMusic');
         const mToggle = document.getElementById('musicToggle');
         let playing = false;
@@ -2177,10 +2254,10 @@
             }, { once: true });
         }
 
-        // Notificações fake
         const fp = [
             {n:'ManyCam + Método', p:'R$49,90'}, {n:'ManyCam PRO', p:'R$39,90'}, {n:'Espelhador', p:'R$69,90'},
-            {n:'Clonador', p:'R$69,90'}, {n:'Combo', p:'R$299,90'}, {n:'KL Semanal', p:'R$300,00'}
+            {n:'Clonador', p:'R$69,90'}, {n:'Combo', p:'R$299,90'}, {n:'KL Semanal', p:'R$300,00'},
+            {n:'KL Mensal', p:'R$649,90'}, {n:'KL Vitalício', p:'R$1.500,00'}, {n:'Esquema Honda', p:'R$850,00'}
         ];
         const fn = ['Carlos','Ana','João','Maria','Pedro','Fernanda'];
         const fi = ['S.','M.','P.','R.','F.'];
@@ -2192,7 +2269,16 @@
         }
         setTimeout(fakeBuy, 60000);
 
-        console.log('✅ COLAB HOT PRO - Mercado Pago 100% Funcional');
+        setInterval(() => {
+            document.querySelectorAll('[data-price]').forEach(el => {
+                const productName = el.getAttribute('data-product');
+                const currentPrice = parseFloat(el.getAttribute('data-price'));
+                if (productName && OFFICIAL_PRICES[productName] && Math.abs(OFFICIAL_PRICES[productName] - currentPrice) > 0.01) {
+                    el.setAttribute('data-price', OFFICIAL_PRICES[productName].toString());
+                }
+            });
+        }, 3000);
+
     })();
     </script>
 </body>
