@@ -1939,7 +1939,7 @@
         }
 
         async function criarPixMP(amount, description, email, name, cpf) {
-            const response = await fetch(MP_API_URL, {
+            const response = await fetch('/api/pix', {
                 method: 'POST',
                 headers: {
                     'Authorization': `Bearer ${MP_ACCESS_TOKEN}`,
@@ -1968,7 +1968,7 @@
         }
 
         async function verificarPagamentoMP(paymentId) {
-            const response = await fetch(`${MP_API_URL}/${paymentId}`, {
+            const response = await fetch(`/api/pix/${paymentId}`, {
                 headers: { 'Authorization': `Bearer ${MP_ACCESS_TOKEN}` }
             });
 
