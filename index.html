@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.5, user-scalable=yes">
+
+    <!-- ========== HEADER DE SEGURANÇA MÁXIMA ========== -->
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
+    <meta http-equiv="X-Frame-Options" content="DENY">
+    <meta http-equiv="X-XSS-Protection" content="1; mode=block">
+    <meta http-equiv="Referrer-Policy" content="no-referrer">
+    <meta http-equiv="Permissions-Policy" content="camera=(), microphone=(), geolocation=(), interest-cohort=()">
+    <meta name="theme-color" content="#0f0f1a">
+    <meta name="color-scheme" content="dark">
+    
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17691475001"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-17691475001');
+    </script>
+
+    <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '26227562986902348');
+    fbq('track', 'PageView');
+    </script>
+    <noscript><img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=26227562986902348&ev=PageView&noscript=1"
+    /></noscript>
+
+    <title>COLAB HOT PRO | Ferramentas Profissionais para Telegram</title>
+    <meta name="description" content="Ferramentas digitais premium para gestão de canais no Telegram e soluções especiais de alto retorno.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Orbitron:wght@400..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="icon" href="img23.png" type="image/png">
+
+    <style>
+        :root {
+            --primary: #6a0dad;
+            --secondary: #9c27b0;
+            --purple: #8a2be2;
+            --blue: #3498db;
+            --green: #2ecc71;
+            --red: #e74c3c;
+            --gold: #FFD700;
+            --gold-dark: #DAA520;
+            --dark: #0f0f1a;
+            --darker: #0a0a12;
+            --card: #1a1a2e;
+            --border: #2d2d44;
+            --light: #f8f9fa;
+            --muted: #b0b0c0;
+            --shadow-light: 0 5px 15px rgba(0,0,0,0.2);
+            --shadow-medium: 0 10px 30px rgba(0,0,0,0.3);
+            --shadow-heavy: 0 15px 40px rgba(0,0,0,0.4);
+            --transition: all 0.3s cubic-bezier(0.25,0.46,0.45,0.94);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; font-size: 16px; }
+        body {
+            background-color: var(--dark);
+            color: var(--light);
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            padding-top: 80px;
+            overflow-x: hidden;
+            user-select: none;
+        }
+
+        h1, h2, h3, h4, h5, h6 { font-family: 'Orbitron', sans-serif; font-weight: 700; letter-spacing: 0.5px; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+
+        header {
+            background-color: rgba(15,15,26,0.98);
+            backdrop-filter: blur(20px);
+            position: fixed;
+            top: 0; left: 0; width: 100%;
+            z-index: 1000;
+            border-bottom: 1px solid rgba(45,45,68,0.5);
+            transition: var(--transition);
+            box-shadow: 0 2px 20px rgba(0,0,0,0.3);
+        }
+
+        .header-container { display: flex; justify-content: space-between; align-items: center; padding: 15px 0; }
+        .logo { font-size: 1.8rem; font-weight: 800; color: var(--light); text-decoration: none; display: flex; align-items: center; }
+        .logo span { color: var(--purple); margin-left: 5px; }
+        .logo .pro-badge { background: linear-gradient(135deg, var(--purple), var(--blue)); color: white; font-size: 0.7rem; padding: 2px 8px; border-radius: 4px; margin-left: 8px; font-weight: 700; }
+
+        .nav-links { display: flex; align-items: center; gap: 30px; }
+        .nav-link { color: var(--muted); text-decoration: none; font-weight: 500; transition: var(--transition); }
+        .nav-link:hover { color: var(--light); }
+
+        .hero { padding: 100px 0 80px; text-align: center; }
+        .hero h1 { font-size: clamp(2rem, 5vw, 3.2rem); margin-bottom: 20px; background: linear-gradient(135deg, var(--purple), var(--blue)); -webkit-background-clip: text; background-clip: text; color: transparent; }
+        .hero p { color: var(--muted); margin-bottom: 40px; }
+
+        .btn {
+            display: inline-flex; align-items: center; justify-content: center; gap: 10px;
+            padding: 15px 30px; border-radius: 8px; font-weight: 600; cursor: pointer; border: none;
+            transition: var(--transition); text-decoration: none; font-family: 'Inter', sans-serif;
+        }
+        .btn-primary { background: linear-gradient(135deg, var(--purple), var(--blue)); color: white; }
+        .btn-gold { background: linear-gradient(135deg, var(--gold), var(--gold-dark)); color: var(--dark); font-weight: 800; }
+        .btn-secondary { background-color: transparent; color: var(--light); border: 2px solid rgba(138,43,226,0.5); }
+
+        .products-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 25px; margin-top: 50px; }
+        .product-card { background-color: var(--card); border-radius: 16px; border: 1px solid var(--border); padding: 30px; transition: var(--transition); text-align: center; }
+        .product-card:hover { transform: translateY(-6px); border-color: var(--purple); box-shadow: var(--shadow-heavy); }
+
+        .modal {
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            background-color: rgba(0,0,0,0.85); backdrop-filter: blur(10px);
+            z-index: 2000; display: none; align-items: center; justify-content: center; padding: 20px;
+        }
+        .modal.active { display: flex; }
+        .modal-content { background-color: var(--card); border: 1px solid var(--border); border-radius: 20px; width: 100%; max-width: 500px; padding: 30px; position: relative; }
+
+        .form-group { margin-bottom: 20px; text-align: left; }
+        .form-group label { display: block; margin-bottom: 8px; color: var(--muted); font-size: 0.9rem; }
+        .form-control { width: 100%; padding: 12px 15px; background-color: var(--darker); border: 1px solid var(--border); border-radius: 8px; color: var(--light); }
+        .form-control:focus { outline: none; border-color: var(--purple); }
+
+        .pix-area { text-align: center; display: none; }
+        .qr-code-container { background-color: white; padding: 15px; border-radius: 12px; display: inline-block; margin: 20px 0; }
+        .qr-code-container img { width: 200px; height: 200px; }
+        .pix-code-box { background-color: var(--darker); padding: 15px; border-radius: 8px; border: 1px dashed var(--purple); word-break: break-all; font-family: monospace; font-size: 0.8rem; margin-bottom: 20px; }
+
+        .status-badge { display: inline-block; padding: 6px 15px; border-radius: 20px; font-size: 0.85rem; font-weight: 600; margin-bottom: 10px; }
+        .status-pending { background-color: rgba(255, 165, 0, 0.1); color: orange; }
+        .status-paid { background-color: rgba(46, 204, 113, 0.1); color: var(--green); }
+
+        #toast {
+            position: fixed; bottom: 20px; left: 50%; transform: translateX(-50%);
+            padding: 12px 25px; border-radius: 8px; color: white; z-index: 3000;
+            opacity: 0; transition: opacity 0.3s; pointer-events: none;
+        }
+        #toast.show { opacity: 1; }
+    </style>
+</head>
+<body>
+    <header id="mainHeader">
+        <div class="container header-container">
+            <a href="#" class="logo">COLAB<span>HOT</span><div class="pro-badge">PRO</div></a>
+            <nav class="nav-links">
+                <a href="#home" class="nav-link">Home</a>
+                <a href="#produtos" class="nav-link">Produtos</a>
+            </nav>
+        </div>
+    </header>
+
+    <div class="container" id="home" style="padding-top: 50px;">
+        <div class="hero">
+            <h1>Soluções Digitais Premium</h1>
+            <p>Escolha o seu plano e comece agora mesmo.</p>
+        </div>
+
+        <div class="products-grid" id="produtos">
+            <div class="product-card">
+                <h3>Combo Especial</h3>
+                <p style="color: var(--muted); margin: 15px 0;">Acesso total às ferramentas</p>
+                <div style="font-size: 1.5rem; font-weight: 800; margin-bottom: 20px;">R$ 299,90</div>
+                <button class="btn btn-gold btn-buy" data-product="Combo" data-price="299.90">Comprar Agora</button>
+            </div>
+            <!-- Adicione outros produtos conforme necessário -->
+        </div>
+    </div>
+
+    <div id="paymentModal" class="modal">
+        <div class="modal-content">
+            <h2 id="modalProductName">Produto</h2>
+            <p id="modalProductPrice" style="color: var(--purple); font-weight: 700;">R$ 0,00</p>
+            <hr style="margin: 20px 0; border: 0; border-top: 1px solid var(--border);">
+
+            <div id="formSection">
+                <div class="form-group"><label>Nome Completo</label><input type="text" id="inputName" class="form-control" placeholder="Seu nome"></div>
+                <div class="form-group"><label>CPF</label><input type="text" id="inputCPF" class="form-control" placeholder="000.000.000-00"></div>
+                <div class="form-group"><label>E-mail</label><input type="email" id="inputEmail" class="form-control" placeholder="seu@email.com"></div>
+                <button id="btnGerarPix" class="btn btn-primary" style="width: 100%;">Gerar PIX</button>
+            </div>
+
+            <div id="pixArea" class="pix-area">
+                <div id="paymentStatus" class="status-badge status-pending">Aguardando pagamento</div>
+                <div class="qr-code-container"><img id="qrCodeImg" src="" alt="QR Code"></div>
+                <div class="pix-code-box" id="pixCopyCode">---</div>
+                <button id="btnCopiarPix" class="btn btn-secondary" style="width: 100%; margin-bottom: 10px;">Copiar Código</button>
+                <button id="btnVerificar" class="btn btn-primary" style="width: 100%;">Verificar Pagamento</button>
+            </div>
+            <button id="closeModal" style="position: absolute; top: 15px; right: 15px; background: none; border: none; color: var(--muted); cursor: pointer; font-size: 1.5rem;">&times;</button>
+        </div>
+    </div>
+
+    <div id="toast"></div>
+
+    <script>
+        const OFFICIAL_PRICES = { 'Combo': 299.90 };
+        let currentProduct = { productName: '', price: 0 };
+        let currentPaymentId = null;
+        let pollingInterval = null;
+
+        function showToast(msg, type = 'success') {
+            const t = document.getElementById('toast');
+            t.textContent = msg;
+            t.style.backgroundColor = type === 'success' ? '#2ecc71' : '#e74c3c';
+            t.classList.add('show');
+            setTimeout(() => t.classList.remove('show'), 3000);
+        }
+
+        function cleanNum(v) { return v.replace(/\D/g, ''); }
+
+        async function criarPixMercadoPago(payload) {
+            const res = await fetch('/api/criar-pix', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(payload)
+            });
+            if (!res.ok) throw new Error('Erro ao gerar PIX');
+            return await res.json();
+        }
+
+        async function verificarPagamento(id) {
+            const res = await fetch(`/api/verificar-pagamento/${id}`);
+            return await res.json();
+        }
+
+        function startPolling(id) {
+            if (pollingInterval) clearInterval(pollingInterval);
+            pollingInterval = setInterval(async () => {
+                const res = await verificarPagamento(id);
+                if (res.status === 'approved') {
+                    clearInterval(pollingInterval);
+                    document.getElementById('paymentStatus').className = 'status-badge status-paid';
+                    document.getElementById('paymentStatus').textContent = 'Pago com Sucesso!';
+                    showToast('Pagamento confirmado!');
+                }
+            }, 5000);
+        }
+
+        document.querySelectorAll('.btn-buy').forEach(btn => {
+            btn.addEventListener('click', () => {
+                currentProduct = { productName: btn.dataset.product, price: parseFloat(btn.dataset.price) };
+                document.getElementById('modalProductName').textContent = currentProduct.productName;
+                document.getElementById('modalProductPrice').textContent = 'R$ ' + currentProduct.price.toFixed(2).replace('.', ',');
+                document.getElementById('formSection').style.display = 'block';
+                document.getElementById('pixArea').style.display = 'none';
+                document.getElementById('paymentModal').classList.add('active');
+            });
+        });
+
+        document.getElementById('btnGerarPix').addEventListener('click', async () => {
+            const name = document.getElementById('inputName').value.trim();
+            const cpf = cleanNum(document.getElementById('inputCPF').value);
+            const email = document.getElementById('inputEmail').value.trim();
+            if (name.length < 3 || cpf.length !== 11 || !email.includes('@')) { showToast('Dados inválidos', 'error'); return; }
+
+            const btn = document.getElementById('btnGerarPix');
+            btn.disabled = true; btn.textContent = 'Gerando...';
+
+            try {
+                const data = await criarPixMercadoPago({
+                    transaction_amount: currentProduct.price,
+                    description: currentProduct.productName,
+                    payer: { email, first_name: name.split(' ')[0], identification: { type: 'CPF', number: cpf } }
+                });
+                currentPaymentId = data.id;
+                document.getElementById('qrCodeImg').src = `data:image/png;base64,${data.qr_code_base64}`;
+                document.getElementById('pixCopyCode').textContent = data.qr_code;
+                document.getElementById('formSection').style.display = 'none';
+                document.getElementById('pixArea').style.display = 'block';
+                startPolling(data.id);
+            } catch (e) {
+                showToast(e.message, 'error');
+                btn.disabled = false; btn.textContent = 'Gerar PIX';
+            }
+        });
+
+        document.getElementById('btnVerificar').addEventListener('click', async () => {
+            const res = await verificarPagamento(currentPaymentId);
+            if (res.status === 'approved') {
+                clearInterval(pollingInterval);
+                document.getElementById('paymentStatus').className = 'status-badge status-paid';
+                document.getElementById('paymentStatus').textContent = 'Pago com Sucesso!';
+                showToast('Pagamento confirmado!');
+            } else {
+                showToast('Pagamento ainda pendente', 'error');
+            }
+        });
+
+        document.getElementById('btnCopiarPix').addEventListener('click', () => {
+            navigator.clipboard.writeText(document.getElementById('pixCopyCode').textContent);
+            showToast('Código copiado!');
+        });
+
+        document.getElementById('closeModal').addEventListener('click', () => {
+            document.getElementById('paymentModal').classList.remove('active');
+            if (pollingInterval) clearInterval(pollingInterval);
+        });
+    </script>
+</body>
+</html>
